@@ -1,0 +1,42 @@
+{% extends "base2.html" %}
+
+{% block cuerpo %}
+<div class="row"><!-- Fila en editar -->
+    <div class="col-md-4 offset-md-4">
+        <h2>Editar Productos</h2>
+        <!-- Aqui codigo tarjeta -->
+        <div class="card"> <!-- La tarjeta -->
+            <div class="card-body">
+                <form action="/editarCliente/" method="POST"> {% csrf_token %}
+                    <div class="form-group py-3">
+                        <input type="text" id="num_id_productos" name="num_id_productos" class="form-control" placeholder="Id Cliente" value="{{ misproductoss.id_productos }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txt_nombre_productos" name="txt_nombre_productos" class="form-control" value="{{misproductoss.nombre}}" maxlenght="100" required><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txt_apellidop_productos" name="txt_apellidop_productos" class="form-control" value="{{misproductoss.apellido_p}}" maxlenght="100" required><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txt_apellidom_productos" name="txt_apellidom_productos" class="form-control" value="{{misproductoss.apellido_m}}" maxlenght="100" required><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="date_fecha_productos" name="date_fecha_productos" class="form-control" value="{{misproductoss.fecha}}" required><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txt_direccion_productos" name="txt_direccion_productos" class="form-control" value="{{misproductoss.direccion}}" maxlenght="100" required><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txt_telefono_productos" name="txt_telefono_productos" class="form-control" value="{{misproductoss.telefono}}" maxlenght="10" required><br>
+                    </div>
+                    <div class="form-group py-2">
+                        <button type="submit" class="btn btn-primary">Guardar Cliente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Aqui codigo tarjeta -->
+    </div>
+</div><!-- Fila en editar -->
+
+{% endblock %}
